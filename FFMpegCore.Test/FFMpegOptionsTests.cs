@@ -21,15 +21,6 @@ namespace FFMpegCore.Test
         }
 
         [TestMethod]
-        public void Options_Loaded_From_File()
-        {
-            var config = JsonConvert.DeserializeObject<FFOptions>(File.ReadAllText("ffmpeg.config.json"));
-
-            Assert.AreEqual(GlobalFFOptions.Current.FFMpegBinaryPath, config.FFMpegBinaryPath);
-            Assert.AreEqual(GlobalFFOptions.Current.FFProbeBinaryPath, config.FFProbeBinaryPath);
-        }
-
-        [TestMethod]
         public void Options_Set_Programmatically()
         {
             var original = GlobalFFOptions.Current; 
