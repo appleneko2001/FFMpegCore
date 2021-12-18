@@ -14,13 +14,6 @@ namespace FFMpegCore.Test
         }
 
         [TestMethod]
-        public void Options_Defaults_Configured()
-        {
-            Assert.AreEqual(new FFOptions().FFMpegBinaryPath, $"");
-            Assert.AreEqual(new FFOptions().FFProbeBinaryPath, $"");
-        }
-
-        [TestMethod]
         public void Options_Set_Programmatically()
         {
             var original = GlobalFFOptions.Current; 
