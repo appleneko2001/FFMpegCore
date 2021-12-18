@@ -14,31 +14,16 @@ namespace FFMpegCore.Test
         }
 
         [TestMethod]
-        public void Options_Defaults_Configured()
-        {
-            Assert.AreEqual(new FFOptions().BinaryFolder, $"");
-        }
-
-        [TestMethod]
-        public void Options_Loaded_From_File()
-        {
-            Assert.AreEqual(
-                GlobalFFOptions.Current.BinaryFolder, 
-                JsonConvert.DeserializeObject<FFOptions>(File.ReadAllText("ffmpeg.config.json")).BinaryFolder
-            );
-        }
-
-        [TestMethod]
         public void Options_Set_Programmatically()
         {
             var original = GlobalFFOptions.Current; 
             try
             {
-                GlobalFFOptions.Configure(new FFOptions { BinaryFolder = "Whatever" });
-                Assert.AreEqual(
-                    GlobalFFOptions.Current.BinaryFolder,
-                    "Whatever"
-                );
+                var v = "Whatever";
+                
+                GlobalFFOptions.Configure(new FFOptions { FFMpegBinaryPath = v, FFProbeBinaryPath = v});
+                Assert.AreEqual(GlobalFFOptions.Current.FFMpegBinaryPath, v);
+                Assert.AreEqual(GlobalFFOptions.Current.FFProbeBinaryPath, v);
             }
             finally
             {

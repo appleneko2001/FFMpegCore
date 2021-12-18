@@ -20,8 +20,8 @@ namespace FFMpegCore.Helpers
 
         public static void RootExceptionCheck()
         {
-            if (GlobalFFOptions.Current.BinaryFolder == null)
-                throw new FFOptionsException("FFProbe root is not configured in app config. Missing key 'BinaryFolder'.");
+            if (GlobalFFOptions.Current.FFProbeBinaryPath == null)
+                throw new FFOptionsException("FFProbe path is not configured. Missing key 'FFProbeBinaryPath'.");
         }
         
         public static void VerifyFFProbeExists(FFOptions ffMpegOptions)

@@ -2,31 +2,23 @@
 
   <PropertyGroup>
     <NeutralLanguage>en</NeutralLanguage>
-    <RepositoryUrl>https://github.com/rosenbjerg/FFMpegCore</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/rosenbjerg/FFMpegCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/appleneko2001/FFMpegCore</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/appleneko2001/FFMpegCore</PackageProjectUrl>
     <Copyright></Copyright>
-    <Description>A .NET Standard FFMpeg/FFProbe wrapper for easily integrating media analysis and conversion into your .NET applications</Description>
+    <Description>FFMpegCore mod by appleneko2001. For more information, browse the project URL.</Description>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>- Support for reading Disposition metadata on streams in FFProbe output (thanks alex6dj)
-- Fix for stream index in Snapshot(Async) (thanks stasokrosh)
-- Add support for frame analysis through FFProbe,GetFrames(Async) (thanks andyjmorgan)
-- Fix for subtitle burning error, when subtitle path contains special characters (thanks alex6dj)
-- Support for Audio filters (thanks alex6dj)
-- Fix FFProbe.AnalyseAsync not throwing if non-zero exit-code (thanks samburovkv)
-- Change bit_rate from int to long to support analysis of high bit-rate files (thanks zhuker) 
-- Support for specifying working directory for ffmpeg and ffprobe processes through FFOptions
-- Ensure Image instances in JoinImageSequence are disposed
-- Added ConfigureAwait(false) to prevent hanging with certain frameworks</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <LangVersion>8</LangVersion>
     <PackageVersion>4.6.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Authors>Malte Rosenbjerg, Vlad Jerca, Max Bagryantsev</Authors>
-    <PackageTags>ffmpeg ffprobe convert video audio mediafile resize analyze muxing</PackageTags>
+    <Authors>Malte Rosenbjerg, Vlad Jerca, Max Bagryantsev, Appleneko2001</Authors>
+    <PackageTags>ffmpeg ffprobe convert video audio mediafile resize analyze muxing mod appleneko2001</PackageTags>
     <RepositoryType>GitHub</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Nullable>enable</Nullable>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Appleneko2001.FFMpegCore</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

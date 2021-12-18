@@ -1,9 +1,7 @@
-# [FFMpegCore](https://www.nuget.org/packages/FFMpegCore/) 
-[![NuGet Badge](https://buildstats.info/nuget/FFMpegCore)](https://www.nuget.org/packages/FFMpegCore/)
-[![GitHub issues](https://img.shields.io/github/issues/rosenbjerg/FFMpegCore)](https://github.com/rosenbjerg/FFMpegCore/issues)
-[![GitHub stars](https://img.shields.io/github/stars/rosenbjerg/FFMpegCore)](https://github.com/rosenbjerg/FFMpegCore/stargazers)
-[![GitHub](https://img.shields.io/github/license/rosenbjerg/FFMpegCore)](https://github.com/rosenbjerg/FFMpegCore/blob/master/LICENSE)
-[![CI](https://github.com/rosenbjerg/FFMpegCore/workflows/CI/badge.svg)](https://github.com/rosenbjerg/FFMpegCore/actions?query=workflow%3ACI)
+> This is modified FFMpegCore, used for my projects. [Go to original repository](https://github.com/rosenbjerg/FFMpegCore) if you looking for it.
+
+# [FFMpegCore](https://www.nuget.org/packages/Appleneko2001.FFMpegCore/) 
+[![NuGet Badge](https://buildstats.info/nuget/Appleneko2001.FFMpegCore)](https://www.nuget.org/packages/Appleneko2001.FFMpegCore/)
 
 A .NET Standard FFMpeg/FFProbe wrapper for easily integrating media analysis and conversion into your .NET applications. Supports both synchronous and asynchronous calls
 
@@ -182,7 +180,17 @@ await FFMpegArguments
     .FromFileInput(inputPath)
     .OutputToFile(outputPath)
     .ProcessAsynchronously(true, new FFOptions { BinaryFolder = "./bin", TemporaryFilesFolder = "/tmp" });
-```
+
+// or combined, setting global defaults and adapting per-run options
+GlobalFFOptions.Configure(new FFOptions { BinaryFolder = "./bin", TemporaryFilesFolder = "./globalTmp", WorkingDirectory = "./" });
+
+await FFMpegArguments
+    .FromFileInput(inputPath)
+    .OutputToFile(outputPath)
+    .Configure(options => options.WorkingDirectory = "./CurrentRunWorkingDir")
+    .Configure(options => options.TemporaryFilesFolder = "./CurrentRunTmpFolder")
+    .ProcessAsynchronously();
+    ```
 
 ### Option 2
 

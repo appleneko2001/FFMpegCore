@@ -31,8 +31,8 @@ namespace FFMpegCore.Helpers
 
         public static void RootExceptionCheck()
         {
-            if (GlobalFFOptions.Current.BinaryFolder == null)
-                throw new FFOptionsException("FFMpeg root is not configured in app config. Missing key 'BinaryFolder'.");
+            if (GlobalFFOptions.Current.FFMpegBinaryPath == null)
+                throw new FFOptionsException("FFMpeg path is not configured. Missing key 'FFMpegBinaryPath'.");
         }
         
         public static void VerifyFFMpegExists(FFOptions ffMpegOptions)
