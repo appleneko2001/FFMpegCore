@@ -23,13 +23,13 @@ namespace FFMpegCore
         {
             _current = ffOptions ?? throw new ArgumentNullException(nameof(ffOptions));
         }
-        
 
-        public static string GetFFMpegBinaryPath(FFOptions? ffOptions = null) => GetFFBinaryPath("FFMpeg", ffOptions ?? Current);
 
-        public static string GetFFProbeBinaryPath(FFOptions? ffOptions = null) => GetFFBinaryPath("FFProbe", ffOptions ?? Current);
+        public static string GetFFMpegBinaryPath(FFOptions? ffOptions = null) => ffOptions.FFMpegBinaryPath;
 
-        private static string GetFFBinaryPath(string name, FFOptions ffOptions)
+        public static string GetFFProbeBinaryPath(FFOptions? ffOptions = null) => ffOptions.FFProbeBinaryPath;
+
+        /*private static string GetFFBinaryPath(string name, FFOptions ffOptions)
         {
             var ffName = name.ToLowerInvariant();
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -40,7 +40,7 @@ namespace FFMpegCore
                 ffName = Path.Combine(target, ffName);
 
             return Path.Combine(ffOptions.BinaryFolder, ffName);
-        }
+        }*/
 
         private static FFOptions LoadFFOptions()
         {

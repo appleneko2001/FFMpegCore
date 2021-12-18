@@ -48,7 +48,11 @@ namespace FFMpegCore.Test
         public void Processor_Options_CanBeOverridden_And_Configured()
         {
             var globalConfig = "Whatever";
-            GlobalFFOptions.Configure(new FFOptions { WorkingDirectory = globalConfig, TemporaryFilesFolder = globalConfig, BinaryFolder = globalConfig });
+            GlobalFFOptions.Configure(new FFOptions
+            {
+                WorkingDirectory = globalConfig, TemporaryFilesFolder = globalConfig, FFMpegBinaryPath = globalConfig,
+                FFProbeBinaryPath = globalConfig
+            });
 
 
             var processor = CreateArgumentProcessor();
@@ -61,7 +65,8 @@ namespace FFMpegCore.Test
 
             options.Should().BeEquivalentTo(overrideOptions);
             options.TemporaryFilesFolder.Should().BeEquivalentTo(sessionTempDir);
-            options.BinaryFolder.Should().NotBeEquivalentTo(globalConfig);
+            options.FFMpegBinaryPath.Should().NotBeEquivalentTo(globalConfig);
+            options.FFProbeBinaryPath.Should().NotBeEquivalentTo(globalConfig);
         }
 
 

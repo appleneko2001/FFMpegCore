@@ -15,7 +15,18 @@ namespace FFMpegCore
         /// <summary>
         /// Folder container ffmpeg and ffprobe binaries. Leave empty if ffmpeg and ffprobe are present in PATH
         /// </summary>
+        [Obsolete("This property should be unused on this mod.", true)]
         public string BinaryFolder { get; set; } = string.Empty;
+
+        /// <summary>
+        /// ffmpeg binary path.
+        /// </summary>
+        public string FFMpegBinaryPath { get; set; } = string.Empty;
+        
+        /// <summary>
+        /// ffprobe binary path.
+        /// </summary>
+        public string FFProbeBinaryPath { get; set; } = string.Empty;
 
         /// <summary>
         /// Folder used for temporary files necessary for static methods on FFMpeg class
