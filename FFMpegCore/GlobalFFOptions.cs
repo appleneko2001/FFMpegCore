@@ -7,7 +7,6 @@ namespace FFMpegCore
 {
     public static class GlobalFFOptions
     {
-        private static readonly string ConfigFile = "ffmpeg.config.json";
         private static FFOptions? _current;
 
         public static FFOptions Current
@@ -44,14 +43,7 @@ namespace FFMpegCore
 
         private static FFOptions LoadFFOptions()
         {
-            if (File.Exists(ConfigFile))
-            {
-                return JsonSerializer.Deserialize<FFOptions>(File.ReadAllText(ConfigFile))!;
-            }
-            else
-            {
-                return new FFOptions();
-            }
+            return new FFOptions();
         }
     }
 }
