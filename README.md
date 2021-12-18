@@ -2,10 +2,6 @@
 
 # [FFMpegCore](https://www.nuget.org/packages/Appleneko2001.FFMpegCore/) 
 [![NuGet Badge](https://buildstats.info/nuget/Appleneko2001.FFMpegCore)](https://www.nuget.org/packages/Appleneko2001.FFMpegCore/)
-[![GitHub issues](https://img.shields.io/github/issues/appleneko2001/FFMpegCore)](https://github.com/appleneko2001/FFMpegCore/issues)
-[![GitHub stars](https://img.shields.io/github/stars/appleneko2001/FFMpegCore)](https://github.com/appleneko2001/FFMpegCore/stargazers)
-[![GitHub](https://img.shields.io/github/license/appleneko2001/FFMpegCore)](https://github.com/appleneko2001/FFMpegCore/blob/master/LICENSE)
-[![CI](https://github.com/appleneko2001/FFMpegCore/workflows/CI/badge.svg)](https://github.com/appleneko2001/FFMpegCore/actions?query=workflow%3ACI)
 
 A .NET Standard FFMpeg/FFProbe wrapper for easily integrating media analysis and conversion into your .NET applications. Supports both synchronous and asynchronous calls
 
