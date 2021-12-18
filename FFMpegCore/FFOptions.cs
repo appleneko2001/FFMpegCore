@@ -21,12 +21,12 @@ namespace FFMpegCore
         /// <summary>
         /// ffmpeg binary path.
         /// </summary>
-        public string FFMpegBinaryPath { get; set; } = string.Empty;
+        public string FFMpegBinaryPath { get; set; } = "ffmpeg.exe";
         
         /// <summary>
         /// ffprobe binary path.
         /// </summary>
-        public string FFProbeBinaryPath { get; set; } = string.Empty;
+        public string FFProbeBinaryPath { get; set; } = "ffprobe.exe";
 
         /// <summary>
         /// Folder used for temporary files necessary for static methods on FFMpeg class
