@@ -24,9 +24,9 @@ namespace FFMpegCore
         }
 
 
-        public static string GetFFMpegBinaryPath(FFOptions? ffOptions = null) => ffOptions.FFMpegBinaryPath;
+        public static string GetFFMpegBinaryPath(FFOptions? ffOptions = null) => ffOptions?.FFMpegBinaryPath ?? Current.FFMpegBinaryPath;
 
-        public static string GetFFProbeBinaryPath(FFOptions? ffOptions = null) => ffOptions.FFProbeBinaryPath;
+        public static string GetFFProbeBinaryPath(FFOptions? ffOptions = null) => ffOptions?.FFProbeBinaryPath ?? Current.FFProbeBinaryPath;
 
         /*private static string GetFFBinaryPath(string name, FFOptions ffOptions)
         {
